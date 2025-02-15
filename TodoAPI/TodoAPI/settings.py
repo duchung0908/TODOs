@@ -12,21 +12,28 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import environ
+
+env = environ.Env()
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+BASE_URL = env("BASE_URL", default="http://localhost")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@b2&@31bd@m-v*4r@s96qh4%bdancml=lk3@yppaxr6l7_m_@0'
+SECRET_KEY = env(
+    "DJANGO_SECRET_KEY",
+    default="6n&fz#k_vf1bnmmb0h9u91gvr0+5mw9#$$b_a-@zcwr7vx)636",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS", default=["*"])
 
 
 # Application definition
@@ -53,8 +60,8 @@ REST_FRAMEWORK = {
 
 # set up Jwt token such as lifetime, refresh token, ..etc
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(days=5),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=90),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=env("ACCESS_TOKEN_LIFETIME", default=5)),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=env("REFRESH_TOKEN_LIFETIME", default=90)),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
     "UPDATE_LAST_LOGIN": False,
