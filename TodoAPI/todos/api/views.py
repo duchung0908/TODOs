@@ -1,7 +1,8 @@
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.serializers import TokenRefreshSerializer
 from rest_framework import filters, generics, status
 from .serializers import (
     MyTokenObtainPairSerializer, CreateTodoSerializer,
@@ -13,6 +14,11 @@ from rest_framework.exceptions import ValidationError, NotFound
 """ Login View extend from TokenObtainPairView and use MyTokenObtainPairSerializer to customize information"""
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
+
+
+"""Get token by refresh token"""
+class CustomTokenRefreshView(TokenRefreshView):
+    serializer_class = TokenRefreshSerializer
 
 
 """ Create Todo view """
