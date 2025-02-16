@@ -35,7 +35,6 @@ class ListTodoSerializer(serializers.ModelSerializer):
         exclude = ('user_id', 'modified', 'is_removed')
 
 
-
 class UpdateTodoSerializer(serializers.ModelSerializer):
 
     title = serializers.CharField(max_length=100, required=False)

@@ -49,13 +49,19 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'todos',
     'corsheaders',
+    'django_filters',
 ]
 
 # using JWTAuthentication
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+        'rest_framework.filters.SearchFilter',
+    ),
 }
 
 # set up Jwt token such as lifetime, refresh token, ..etc

@@ -60,6 +60,16 @@
     cd TodoAPI folder
     python manage.py runserver
 
+## Testing
+    
+--Linux/Ubuntu
+    ```bash
+    python3 manage.py test
+
+--Windows
+    ```bash
+    python manage.py test
+
 #### 
 If you need help, contact me via email "tranduchung0908@gmail.com". Thanks
 ####
