@@ -51,11 +51,13 @@
 6. Runserver
 
     6.1 Linux/Ubuntu
+    
         ```bash
         cd TodoAPI folder
         python3 manage.py runserver
 
     6.2 Windows
+
         ```bash
         cd TodoAPI folder
         python manage.py runserver
@@ -63,10 +65,12 @@
 ## Testing
     
 1. Linux/Ubuntu
+
     ```bash
     python3 manage.py test
 
 2. Windows
+
     ```bash
     python manage.py test
 
