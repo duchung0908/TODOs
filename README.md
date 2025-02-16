@@ -14,15 +14,15 @@
 
 3. Install virtual environment and active (optional if not the packages will install directly on your device)
 
---Linux/Ubuntu
-    ```bash
-    python3 -m venv venv
-    . venv/bin/activate
+    3.1 Linux/Ubuntu
+    
+        python3 -m venv venv
+        . venv/bin/activate
 
---Windows
-    ```bash
-    python -m venv venv
-    . venv\Scripts\activate 
+    3.2 Windows
+    
+        python -m venv venv
+        . venv\Scripts\activate 
 
 ---Note: If you can not activate virtual environment on Windows because of the PowerShell on your device, follow the step bellow:
     - Run Windows PowerShell as administrator
