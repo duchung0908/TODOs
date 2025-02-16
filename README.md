@@ -37,13 +37,13 @@
 5. Migrate DB and create super user or use my account ("username": "duchung","password": "123456789@")
 
     5.1 Linux/Ubuntu
-        ```bash
+
         python3 manage.py makemigrations
         python3 manage.py migrate
         python3 manage.py createsuperuser
 
     5.2 Windows
-        ```bash
+
         python manage.py makemigrations
         python manage.py migrate
         python manage.py createsuperuser
@@ -51,14 +51,12 @@
 6. Runserver
 
     6.1 Linux/Ubuntu
-    
-        ```bash
+
         cd TodoAPI folder
         python3 manage.py runserver
 
     6.2 Windows
 
-        ```bash
         cd TodoAPI folder
         python manage.py runserver
 
